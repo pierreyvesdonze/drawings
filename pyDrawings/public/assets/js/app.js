@@ -84,7 +84,7 @@ var app = {
         // $('.mouth').css('border-radius', '0 0 60px 60px');
         app.clignement();
         $('.mouth').toggleClass('mouthCurve')
-        $('.mouthCurve').toggleClass('mouth').removeClass('mouthCurve');
+        $('.mouthCurve').toggleClass('mouth')
     }
 }
 
