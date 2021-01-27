@@ -4,6 +4,7 @@ var app = {
 
         console.log('app init');
         app.clignement();
+        app.clock();
 
         // L I S T E N E R S 
         $('.head-color').hover(app.changeColor)
@@ -85,6 +86,26 @@ var app = {
         app.clignement();
         $('.mouth').toggleClass('mouthCurve')
         $('.mouthCurve').toggleClass('mouth')
+    },
+
+    clock: function() {
+        const deg = 6
+        const hr = document.querySelector('#hr');
+        const mn = document.querySelector('#mn');
+        const sc = document.querySelector('#sc');
+    
+        setInterval(() => {
+    
+            
+            let day = new Date();
+            let hh = day.getHours() * 30;
+            let mm = day.getMinutes() * deg;
+            let ss = day.getSeconds() * deg;
+            
+            hr.style.transform = `rotateZ(${(hh) + (mm/12)}deg)`;
+            mn.style.transform = `rotateZ(${mm}deg)`;
+            sc.style.transform = `rotateZ(${ss}deg)`;
+        })
     }
 }
 
