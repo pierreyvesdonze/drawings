@@ -3,11 +3,18 @@ var app = {
     init: function () {
 
         console.log('app init');
+        app.clignement();
 
         // L I S T E N E R S 
         $('.head-color').hover(app.changeColor)
+        $('.head-color').click(app.changeBackProductColor)
+        $('.adopter').click(app.adopter)
 
         // CLIGNEMENT DES YEUX
+
+    },
+
+    clignement: function (params) {   
         // LEFT
         setTimeout(function () {
             $('.left-eyelid').toggleClass('test');
@@ -31,6 +38,8 @@ var app = {
 
     changeColor: function (e) {
         const headColor = $(e.currentTarget);
+        app.clignement();
+
         if (headColor.hasClass('blue-color')) {
             $('.head').css('background', 'var(--blue-head');
             $('.left-eyelid').css('background', 'var(--blue-head');
@@ -48,6 +57,34 @@ var app = {
             $('.left-eyelid').css('background', 'var(--yellow-head');
             $('.right-eyelid').css('background', 'var(--yellow-head');
         }
+    },
+
+    changeBackProductColor: function (e) {
+        const backGroundColor = $(e.currentTarget);
+        if (backGroundColor.hasClass('blue-color')) {
+            $('.card').css('background', 'var(--blue-color');
+            $('h2').css('color', 'white')
+            $('h3').css('color', 'white')
+        } else if (backGroundColor.hasClass('green-color')) {
+            $('.card').css('background', 'var(--green-color');
+            $('h2').css('color', 'black')
+            $('h3').css('color', 'black')
+        } else if (backGroundColor.hasClass('red-color')) {
+            $('.card').css('background', 'var(--red-color');
+            $('h2').css('color', 'white')
+            $('h3').css('color', 'white')
+        } else if (backGroundColor.hasClass('yellow-color')) {
+            $('.card').css('background', 'var(--yellow-color');
+            $('h2').css('color', 'black')
+            $('h3').css('color', 'black')
+        }
+    },
+
+    adopter: function (params) {
+        // $('.mouth').css('border-radius', '0 0 60px 60px');
+        app.clignement();
+        $('.mouth').toggleClass('mouthCurve')
+        $('.mouthCurve').toggleClass('mouth').removeClass('mouthCurve');
     }
 }
 

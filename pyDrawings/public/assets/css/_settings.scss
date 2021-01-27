@@ -4,6 +4,12 @@ COLORS
 ***********************************
 */
 :root {
+
+    --body-color: radial-gradient(circle, #131313 0%, #1a1a1a 100%);
+    --primary-color : #131313;
+    --link-color: white;
+    --link-visited-color: rgb(201, 201, 201);
+
     --green-color: #9bdc28;
     --yellow-color: yellow;
     --blue-color: #03a9f4;
@@ -20,6 +26,11 @@ COLORS
   GENERAL
   ***********************************
   */
+
+  body {
+    background: var(--body-color);
+    overflow: hidden;
+  }
   
   *:focus {
     outline: none;
@@ -75,6 +86,11 @@ COLORS
   a {
     margin: 0;
     text-decoration: none;
+    color: var(--link-color);
+  }
+
+  a:visited {
+    color: var(--link-visited-color);
   }
   
   .no-color-link {

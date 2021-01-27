@@ -10,6 +10,7 @@ NAV
 .menu {
     background-color: var(--primary-color);
     display: flex;
+    flex-direction: row;
     width: 90%;
     z-index: 200;
     position: sticky;
