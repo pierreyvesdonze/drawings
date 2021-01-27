@@ -4,15 +4,14 @@ COLORS
 ***********************************
 */
 :root {
-  --primary-color: #222222;
-  --secondary-color: #ffffff;
-  --title-color: #002140;
-  --font-color-white: #cecece;
-  --font-color-dark: #3b3b3b;
-  --main-span-color: #e7b203;
-  --link-color: #1eaedb;
-  --witch-pink: rgb(238, 42, 75);
-  --witch-yellow: #c5ac48;
+  --green-color: #9bdc28;
+  --yellow-color: yellow;
+  --blue-color: #03a9f4;
+  --red-color: #e91e63;
+  --green-head: radial-gradient(circle, #9bdc28 0%, #79ad20 100%);
+  --blue-head: radial-gradient(circle, #0099ff 0%, #01548b 100%);
+  --red-head: radial-gradient(circle, #e91e63 0%, #91123c 100%);
+  --yellow-head: radial-gradient(circle, rgba(255,230,0,1) 0%, rgba(212,193,19,1) 100%);
 }
 
 /*
@@ -125,9 +124,25 @@ label {
 
 .scrollable-auto {
   padding: 1em 2em;
-  overflow-y: scroll;
+  padding: 50px;
   height: 800px;
   margin-bottom: 1em;
+  background-color: var(--primary-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  z-index: 200;
+  position: -webkit-sticky;
+  position: sticky;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  height: auto;
+  padding: 1em 0;
+  -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+  margin: 0 auto 2em auto;
+  border-radius: 0 0 20px 20px;
 }
 
 .margin-none {
@@ -302,6 +317,313 @@ li {
   MEDIA QUERIES
   ***********************************
   */
+.product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: #131313;
+}
+
+.container {
+  position: relative;
+}
+
+.container .card {
+  position: relative;
+  width: 320px;
+  height: 450px;
+  background: #232323;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.container .card:before {
+  content: '';
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--yellow-color);
+  -webkit-clip-path: circle(150px at 80% 20%);
+          clip-path: circle(150px at 80% 20%);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.container .card:hover:before {
+  -webkit-clip-path: circle(300px at 80% -20%);
+          clip-path: circle(300px at 80% -20%);
+}
+
+.container .card:after {
+  content: ':)';
+  position: absolute;
+  top: 30%;
+  left: -20%;
+  font-size: 12em;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.04);
+}
+
+.container .card .imgBx {
+  position: absolute;
+  top: 50%;
+  margin: -46%;
+  z-index: 10000;
+  width: 100%;
+  height: 80px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.container .card:hover .imgBx {
+  top: 0%;
+  -webkit-transform: translateY(70%);
+          transform: translateY(70%);
+}
+
+.container .card .imgBx .head {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.container .card .contentBx {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 10;
+}
+
+.container .card:hover .contentBx {
+  height: 210px;
+}
+
+.container .card .contentBx h2 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.container .card .contentBx .size,
+.container .card .contentBx .color {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .5s;
+  transition: .5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.container .card:hover .contentBx .size,
+.container .card:hover .contentBx .color {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.container .card .contentBx .size h3,
+.container .card .contentBx .color h3 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+}
+
+.container .card .contentBx .size span {
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  display: inline-block;
+  color: #111;
+  background: #fff;
+  margin: 0 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.container .card .contentBx .size span:hover {
+  background: var(--green-color);
+}
+
+.container .card .contentBx .color span {
+  width: 20px;
+  height: 20px;
+  background: var(--yellow-color);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.container .card .contentBx .color span:nth-child(2) {
+  background: var(--green-color);
+}
+
+.container .card .contentBx .color span:nth-child(3) {
+  background: var(--blue-color);
+}
+
+.container .card .contentBx .color span:nth-child(4) {
+  background: var(--red-color);
+}
+
+.container .card .contentBx a {
+  display: inline-block;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #111;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.container .card:hover .contentBx a {
+  opacity: 1;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-transition-delay: 0.75s;
+          transition-delay: 0.75s;
+}
+
+.head {
+  position: relative;
+  background: #ffe600;
+  background: radial-gradient(circle, #ffe600 0%, #d4c113 100%);
+  width: 300px;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+}
+
+.eyelids,
+.eyes {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 50%;
+}
+
+.eyelids {
+  height: 6%;
+}
+
+.eyes {
+  height: 26%;
+}
+
+.left-eyelid,
+.right-eyelid {
+  background: radial-gradient(circle, #ffe600 0%, #d4c113 100%);
+  width: 45px;
+  height: 45px;
+  z-index: 113;
+  border-radius: 50% 50% 0 0;
+  -webkit-box-shadow: 0 0 3px 2px;
+  box-shadow: 0 0 11px 4px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.left-eyelid.test, .right-eyelid.test {
+  height: 65px;
+  z-index: 400;
+}
+
+.eyelids {
+  top: 22%;
+}
+
+.left-eye,
+.right-eye {
+  width: 45px;
+  height: 33px;
+  background: #fbfaed;
+  background: radial-gradient(circle, #fbfaed 0%, #ffe07c 100%);
+  z-index: 90;
+  border-radius: 0 0 52% 52%;
+  position: absolute;
+  top: 0%;
+  -webkit-box-shadow: 2px 2px 15px -1px;
+          box-shadow: 2px 2px 15px -1px;
+}
+
+.right-eye {
+  left: 70%;
+}
+
+.pupil {
+  width: 47%;
+  height: 18px;
+  background: black;
+  margin: auto;
+  border-radius: 0 0 50% 50%;
+}
+
+.pupil-right {
+  right: 0%;
+}
+
+.mouth {
+  position: absolute;
+  top: 70%;
+  background-color: black;
+  width: 50%;
+  height: 6%;
+  border-radius: 20px;
+}
+
 /*
 ***********************************
 NAV
@@ -352,7 +674,8 @@ LOGIN / REGISTER
 TABLE
 ***********************************
 */
-table tbody tr td, table thead th {
+table tbody tr td,
+table thead th {
   padding-left: 2em;
   color: var(--font-color);
 }
@@ -370,7 +693,8 @@ table thead th {
   font-size: 1.1em;
 }
 
-.table td, .table th {
+.table td,
+.table th {
   border-top: 1px solid var(--border-color);
 }
 
@@ -395,66 +719,5 @@ table thead th {
 
 .center-solo {
   text-align: center !important;
-}
-
-.head {
-  position: relative;
-  background: #ffe600;
-  width: 600px;
-  height: 600px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-radius: 50%;
-}
-
-.eyelids, .eyes {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 50%;
-  height: 6%;
-}
-
-.left-eyelid, .right-eyelid {
-  background: black;
-  width: 90px;
-  height: 90px;
-  z-index: 3;
-  border-radius: 50% 50% 0 0;
-}
-
-.eyelids {
-  top: 22%;
-}
-
-.left-eye, .right-eye {
-  width: 90px;
-  height: 65px;
-  background: white;
-  border-radius: 0 0 50% 50%;
-}
-
-.mouth {
-  position: absolute;
-  top: 70%;
-  background-color: black;
-  width: 50%;
-  height: 6%;
 }
 /*# sourceMappingURL=styles.css.map */

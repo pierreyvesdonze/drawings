@@ -18,11 +18,19 @@ class DefaultController extends AbstractController
         ]);
     }
 
-        /**
+    /**
      * @Route("/", name="home")
      */
     public function home(): Response
     {
         return $this->render('default/home.html.twig');
+    }
+
+        /**
+     * @Route("/product", name="product")
+     */
+    public function product(): Response
+    {
+        return $this->render('product/product.html.twig');
     }
 }

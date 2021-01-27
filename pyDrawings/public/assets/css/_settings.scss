@@ -4,15 +4,15 @@ COLORS
 ***********************************
 */
 :root {
-    --primary-color: #222222;
-    --secondary-color: #ffffff;
-    --title-color: #002140;
-    --font-color-white: #cecece;
-    --font-color-dark: #3b3b3b;
-    --main-span-color: #e7b203;
-    --link-color: #1eaedb;
-    --witch-pink: rgb(238, 42, 75);
-    --witch-yellow: #c5ac48;
+    --green-color: #9bdc28;
+    --yellow-color: yellow;
+    --blue-color: #03a9f4;
+    --red-color: #e91e63;
+
+    --green-head: radial-gradient(circle, #9bdc28 0%, #79ad20 100%);
+    --blue-head: radial-gradient(circle, #0099ff 0%, #01548b 100%);
+    --red-head: radial-gradient(circle, #e91e63 0%, #91123c 100%);
+    --yellow-head: radial-gradient(circle, rgba(255,230,0,1) 0%, rgba(212,193,19,1) 100%);
   }
   
   /*
@@ -115,9 +115,26 @@ COLORS
   
   .scrollable-auto {
     padding: 1em 2em;
-    overflow-y: scroll;
+    // overflow-y: scroll;
+    padding: 50px;
     height: 800px;
     margin-bottom: 1em;
+    background-color: var(--primary-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 90%;
+    z-index: 200;
+    position: -webkit-sticky;
+    position: sticky;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    height: auto;
+    padding: 1em 0;
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+    margin: 0 auto 2em auto;
+    border-radius: 0 0 20px 20px;
   }
   
   .margin-none {

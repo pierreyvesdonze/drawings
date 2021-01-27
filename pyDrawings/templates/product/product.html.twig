@@ -1,0 +1,47 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="product">
+        <div class="container">
+            <div class="card">
+                <div class="imgBx">
+                    {# <img src="{{ asset('assets/images/product.png') }}" alt="recipe-img" class="exemple-img"> #}
+                    <div class="head">
+                        <div class="eyelids">
+                            <div class="left-eyelid"></div>
+                            <div class="right-eyelid"></div>
+                        </div>
+                        <div class="eyes">
+                            <div class="left-eye">
+                                <div class="pupil pupil-left"></div>
+                              
+                            </div>
+                            <div class="right-eye">
+                                <div class="pupil pupil-right"></div>
+                            </div>
+                        </div>
+                
+                        <div class="mouth"></div>
+                    </div>
+                </div>
+                <div class="contentBx">
+                    <h2>Emoji</h2>
+                    <div class="size">
+                        <h3>Taille</h3>
+                        <span>7</span>
+                        <span>8</span>
+                        <span>9</span>
+                        <span>10</span>
+                    </div>
+                    <div class="color">
+                        <h3>Couleur : </h3>
+                        <span class="head-color green-color"></span>
+                        <span class="head-color blue-color"></span>
+                        <span class="head-color red-color"></span>
+                        <span class="head-color yellow-color"></span>
+                    </div>
+                    <a href="#">Adopter</a>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
