@@ -733,9 +733,11 @@ li {
 .hr:before {
   content: '';
   position: absolute;
-  width: 8px;
+  width: 2px;
   height: 80px;
   background: #ff105e;
+  -webkit-box-shadow: 0 -3px 15px rgba(255, 0, 0, 0.3), inset 0 -3px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 -3px 15px rgba(255, 0, 0, 0.3), inset 0 -3px 15px rgba(0, 0, 0, 0.3);
   z-index: 10;
   border-radius: 6px 6px 0 0;
 }
