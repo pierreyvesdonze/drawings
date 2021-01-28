@@ -11,9 +11,9 @@ var app = {
         $('.adopter').click(app.adopter);
         $('.emotion').hover(app.emotion);
     },
-    
+
     // CLIGNEMENT DES YEUX
-    clignement: function (params) {   
+    clignement: function (params) {
         // LEFT
         setTimeout(function () {
             $('.left-eyelid').toggleClass('test');
@@ -79,7 +79,8 @@ var app = {
         }
     },
 
-    emotion: function(e) {
+    /** EMOTION */
+    emotion: function (e) {
         console.log('emo')
         const mouth = $(e.currentTarget);
 
@@ -107,30 +108,28 @@ var app = {
         $('.mouthCurve').toggleClass('mouth')
     },
 
-    /**
-     * EMOTION
-     */
 
-    // clock: function() {
-    //     console.log(this.getUri)
-    //     const deg = 6
-    //     const hr = document.querySelector('#hr');
-    //     const mn = document.querySelector('#mn');
-    //     const sc = document.querySelector('#sc');
-    
-    //     setInterval(() => {
-    
-            
-    //         let day = new Date();
-    //         let hh = day.getHours() * 30;
-    //         let mm = day.getMinutes() * deg;
-    //         let ss = day.getSeconds() * deg;
-            
-    //         hr.style.transform = `rotateZ(${(hh) + (mm/12)}deg)`;
-    //         mn.style.transform = `rotateZ(${mm}deg)`;
-    //         sc.style.transform = `rotateZ(${ss}deg)`;
-    //     })
-    //}
+    /** HORLOGE */
+    clock: function() {
+        console.log(this.getUri)
+        const deg = 6
+        const hr = document.querySelector('#hr');
+        const mn = document.querySelector('#mn');
+        const sc = document.querySelector('#sc');
+
+        setInterval(() => {
+
+
+            let day = new Date();
+            let hh = day.getHours() * 30;
+            let mm = day.getMinutes() * deg;
+            let ss = day.getSeconds() * deg;
+
+            hr.style.transform = `rotateZ(${(hh) + (mm/12)}deg)`;
+            mn.style.transform = `rotateZ(${mm}deg)`;
+            sc.style.transform = `rotateZ(${ss}deg)`;
+        })
+    }
 }
 
 // App Loading
