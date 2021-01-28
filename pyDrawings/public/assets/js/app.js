@@ -4,17 +4,15 @@ var app = {
 
         console.log('app init');
         app.clignement();
-        app.clock();
 
         // L I S T E N E R S 
-        $('.head-color').hover(app.changeColor)
-        $('.head-color').click(app.changeBackProductColor)
-        $('.adopter').click(app.adopter)
-
-        // CLIGNEMENT DES YEUX
-
+        $('.head-color').hover(app.changeColor);
+        $('.head-color').click(app.changeBackProductColor);
+        $('.adopter').click(app.adopter);
+        $('.emotion').hover(app.emotion);
     },
-
+    
+    // CLIGNEMENT DES YEUX
     clignement: function (params) {   
         // LEFT
         setTimeout(function () {
@@ -81,6 +79,27 @@ var app = {
         }
     },
 
+    emotion: function(e) {
+        console.log('emo')
+        const mouth = $(e.currentTarget);
+
+        if (mouth.hasClass('emotion-happy')) {
+            $('.mouth').toggleClass('emotion-happy-change');
+            $('.left-eyelid').toggleClass('left-eyelid-change');
+            $('.right-eyelid').toggleClass('right-eyelid-change');
+            $('.left-eye').toggleClass('.left-eye-change');
+            $('.right-eye').toggleClass('right-eye-change');
+            $('.eyes').toggleClass('eyes-change');
+            $('.pupil-left').toggleClass('pupil-left-change');
+            $('.pupil-right').toggleClass('pupil-right-change');
+        } else if (mouth.hasClass('emotion-sad')) {
+            $('.mouth').toggleClass('mouthSad')
+        } else if (mouth.hasClass('emotion-oneeye')) {
+            $('.mouth').toggleClass('emotion-happy-change');
+            $('.left-eyelid').toggleClass('closedEyelid');
+        }
+    },
+
     adopter: function (params) {
         // $('.mouth').css('border-radius', '0 0 60px 60px');
         app.clignement();
@@ -88,26 +107,32 @@ var app = {
         $('.mouthCurve').toggleClass('mouth')
     },
 
-    clock: function() {
-        const deg = 6
-        const hr = document.querySelector('#hr');
-        const mn = document.querySelector('#mn');
-        const sc = document.querySelector('#sc');
+    /**
+     * EMOTION
+     */
+
+    // clock: function() {
+    //     console.log(this.getUri)
+    //     const deg = 6
+    //     const hr = document.querySelector('#hr');
+    //     const mn = document.querySelector('#mn');
+    //     const sc = document.querySelector('#sc');
     
-        setInterval(() => {
+    //     setInterval(() => {
     
             
-            let day = new Date();
-            let hh = day.getHours() * 30;
-            let mm = day.getMinutes() * deg;
-            let ss = day.getSeconds() * deg;
+    //         let day = new Date();
+    //         let hh = day.getHours() * 30;
+    //         let mm = day.getMinutes() * deg;
+    //         let ss = day.getSeconds() * deg;
             
-            hr.style.transform = `rotateZ(${(hh) + (mm/12)}deg)`;
-            mn.style.transform = `rotateZ(${mm}deg)`;
-            sc.style.transform = `rotateZ(${ss}deg)`;
-        })
-    }
+    //         hr.style.transform = `rotateZ(${(hh) + (mm/12)}deg)`;
+    //         mn.style.transform = `rotateZ(${mm}deg)`;
+    //         sc.style.transform = `rotateZ(${ss}deg)`;
+    //     })
+    //}
 }
 
 // App Loading
 document.addEventListener('DOMContentLoaded', app.init);
+document.addEventListener('DOMContentLoaded', app.clock);
