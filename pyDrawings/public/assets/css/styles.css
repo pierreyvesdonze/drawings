@@ -6,6 +6,7 @@ COLORS
 :root {
   --body-color: radial-gradient(circle, #131313 0%, #1a1a1a 100%);
   --primary-color: #131313;
+  --contrast-color: #e2dede;
   --link-color: white;
   --link-visited-color: rgb(201, 201, 201);
   --green-color: #9bdc28;
@@ -15,7 +16,7 @@ COLORS
   --green-head: radial-gradient(circle, #9bdc28 0%, #79ad20 100%);
   --blue-head: radial-gradient(circle, #0099ff 0%, #01548b 100%);
   --red-head: radial-gradient(circle, #e91e63 0%, #91123c 100%);
-  --yellow-head: radial-gradient(circle, rgba(255,230,0,1) 0%, rgba(212,193,19,1) 100%);
+  --yellow-head: radial-gradient(circle, rgba(255, 230, 0, 1) 0%, rgba(212, 193, 19, 1) 100%);
 }
 
 /*
@@ -328,9 +329,198 @@ li {
 
 /*
   ***********************************
+  MENU
+  ***********************************
+  */
+#menuToggle a {
+  text-decoration: none;
+  color: var(--link-color);
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover {
+  color: tomato;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+  /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: var(--contrast-color);
+  border-radius: 3px;
+  z-index: 1;
+  -webkit-transform-origin: 4px 0px;
+          transform-origin: 4px 0px;
+  -webkit-transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease, -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menuToggle span:first-child {
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  -webkit-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  -webkit-transform: rotate(45deg) translate(-2px, -1px);
+          transform: rotate(45deg) translate(-2px, -1px);
+  background: var(--contrast-color);
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  -webkit-transform: rotate(0deg) scale(0.2, 0.2);
+          transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  -webkit-transform: rotate(-45deg) translate(0, -1px);
+          transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  position: absolute;
+  width: 230px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: var(--primary-color);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  -webkit-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+  -webkit-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), -webkit-transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul {
+  -webkit-transform: none;
+          transform: none;
+}
+
+/*
+  ***********************************
   MEDIA QUERIES
   ***********************************
   */
+.bad-trip-container {
+  padding: 4em;
+}
+
+.badtrip-span {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.badtrip-span:hover {
+  font-size: 2rem;
+}
+
+.badtrip-span {
+  color: white;
+}
+
+.badtrip-1 .badtrip-span {
+  font-size: 1em;
+  color: white;
+}
+
+.badtrip-2 .badtrip-span {
+  font-size: 2em;
+  color: #dddada;
+}
+
+.badtrip-3 .badtrip-span {
+  font-size: 3em;
+  color: #b1b1b1;
+}
+
+.badtrip-4 .badtrip-span {
+  font-size: 4em;
+  color: #636363;
+}
+
+.badtrip-5 .badtrip-span {
+  font-size: 5em;
+  color: #b9b9b9;
+}
+
+.badtrip-6 .badtrip-span {
+  font-size: 6em;
+  color: #dddddd;
+}
+
+.badtrip-7 .badtrip-span {
+  font-size: 7em;
+  color: #3f3f3f;
+}
+
+.badtrip-8 .badtrip-span {
+  font-size: 8em;
+  color: #dbdbdb;
+}
+
+.badtrip-9 .badtrip-span {
+  font-size: 9em;
+  color: #3a3a3a;
+}
+
 .product {
   display: -webkit-box;
   display: -ms-flexbox;

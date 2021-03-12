@@ -41,4 +41,13 @@ class DefaultController extends AbstractController
     {
         return $this->render('clock/clock.html.twig');
     }
+
+
+    /**
+     * @Route("/badtrip", name="bad_trip")
+     */
+    public function badTrip(): Response
+    {
+        return $this->render('badTrip/bad.trip.html.twig');
+    }
 }

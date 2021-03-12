@@ -1,0 +1,62 @@
+.bad-trip-container {
+  padding: 4em;
+}
+
+.badtrip-span {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.badtrip-span:hover {
+  font-size: 2rem;
+}
+
+.badtrip-span {
+  color: white;
+}
+
+.badtrip-1 .badtrip-span  {
+  font-size: 1em;
+  color: white;
+}
+
+.badtrip-2 .badtrip-span {
+  font-size: 2em;
+  color: rgb(221, 218, 218);
+}
+
+.badtrip-3 .badtrip-span {
+  font-size: 3em;
+  color: rgb(177, 177, 177);
+}
+
+.badtrip-4 .badtrip-span {
+  font-size: 4em;
+  color: rgb(99, 99, 99);
+}
+
+.badtrip-5 .badtrip-span {
+  font-size: 5em;
+  color: rgb(185, 185, 185);
+}
+
+.badtrip-6 .badtrip-span {
+  font-size: 6em;
+  color: rgb(221, 221, 221);
+}
+
+.badtrip-7 .badtrip-span {
+  font-size: 7em;
+  color: rgb(63, 63, 63);
+}
+
+.badtrip-8 .badtrip-span {
+  font-size: 8em;
+  color: rgb(219, 219, 219);
+}
+
+.badtrip-9 .badtrip-span {
+  font-size: 9em;
+  color: rgb(58, 58, 58);
+}

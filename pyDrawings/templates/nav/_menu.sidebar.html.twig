@@ -1,12 +1,30 @@
-<nav class="menu">
-        <h3 class="ml-3">
-            <a href="{{ path('home') }}">Emoji
+<nav role="navigation" class="witch-nav">
+    <div id="menuToggle">
+        <input type="checkbox" />
+
+        <span class="burger-button"></span>
+        <span class="burger-button"></span>
+        <span class="burger-button"></span>
+
+        <ul id="menu">
+            <a href="#">
+                <li>Accueil</li>
             </a>
-        </3>
-        <h3>
-            <a href="{{ path('product') }}">Produit Emoji</a>
-        </h3>
-        <h3>
-            <a href="{{ path('clock') }}">Horloge</a>
-        </h3>
+            <a href="{{ path('product') }}">
+                <li>
+                    Produit Emoji
+                </li>
+            </a>
+            <a href="{{ path('clock') }}">
+                <li>
+                    Horloge
+                </li>
+            </a>
+              <a href="{{ path('bad_trip') }}">
+                <li>
+                    Bad trip
+                </li>
+            </a>
+        </ul>
+    </div>
 </nav>
