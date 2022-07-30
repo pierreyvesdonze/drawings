@@ -137,29 +137,6 @@ label {
   background-image: linear-gradient(to right, #161616, white, #161616);
 }
 
-.scrollable-auto {
-  padding: 1em 2em;
-  padding: 50px;
-  height: 800px;
-  margin-bottom: 1em;
-  background-color: var(--primary-color);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 90%;
-  z-index: 200;
-  position: -webkit-sticky;
-  position: sticky;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  height: auto;
-  padding: 1em 0;
-  -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
-  margin: 0 auto 2em auto;
-  border-radius: 0 0 20px 20px;
-}
-
 .margin-none {
   margin: 0;
 }
@@ -519,6 +496,11 @@ li {
 .badtrip-9 .badtrip-span {
   font-size: 9em;
   color: #3a3a3a;
+  transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  -webkit-transform: rotate(-8deg);
+  -khtml-transform: rotate(-8deg);
+  -ms-transform: rotate(-8deg);
 }
 
 .product {
@@ -1027,6 +1009,239 @@ li {
   border-radius: 6px 6px 0 0;
 }
 
+h1,
+p {
+  color: white;
+}
+
+h1 {
+  -webkit-transform: skew(24deg, 0deg);
+          transform: skew(24deg, 0deg);
+  text-shadow: 4px 3px 2px #969696;
+}
+
+h1:after {
+  content: 'Texte En Perspective';
+  -webkit-transform: scaleY(0.5) rotateX(-15deg);
+          transform: scaleY(0.5) rotateX(-15deg);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  opacity: 0.3;
+}
+
+p {
+  -webkit-transform: skew(14deg, -20deg);
+          transform: skew(14deg, -20deg);
+}
+
+p {
+  text-shadow: 4px 3px 2px #3b3b3b;
+}
+
+p:nth-child(2) {
+  text-shadow: 6px 7px 5px #3b3b3b;
+}
+
+h2 {
+  color: #6d6969;
+  -webkit-transform: skew(70deg, -20deg);
+          transform: skew(70deg, -20deg);
+}
+
+.text-container {
+  overflow-y: scroll;
+  height: 90vh;
+  background: url("../images/wood.png");
+}
+
+.text-perspective-div {
+  width: 50%;
+  margin: auto;
+  /* overflow: scroll; */
+  padding-top: 10%;
+}
+
+.random-size-p {
+  word-break: break-all;
+}
+
+#shadow {
+  position: relative;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  -webkit-perspective: 50px;
+          perspective: 50px;
+  -webkit-perspective-origin: 50% 100%;
+          perspective-origin: 50% 100%;
+  display: inline-block;
+}
+
+#shadow::after {
+  content: "Coucou";
+  position: absolute;
+  top: -9px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: scaleY(0.5) rotateX(-15deg);
+          transform: scaleY(0.5) rotateX(-15deg);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  opacity: 0.3;
+}
+
+.bloc-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.block {
+  border: solid 1px white;
+  position: absolute;
+}
+
+.block-1 {
+  width: 320px;
+  height: 320px;
+}
+
+.block-2 {
+  width: 300px;
+  height: 300px;
+}
+
+/*
+***********************************
+BUTTONS
+***********************************
+*/
+.buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 1200px;
+  height: 720px;
+  overflow-y: scroll;
+}
+
+.black-bg-buttons {
+  background-color: #252525;
+}
+
+.white-bg-buttons {
+  background-color: white;
+}
+
+.custom-btn {
+  margin: 2em;
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+}
+
+#shadow-light-btn {
+  background-color: #595959;
+  width: 120px;
+  height: 54px;
+  -webkit-box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.493);
+          box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.493);
+  border-radius: 15px;
+}
+
+#shadow-light-btn:hover {
+  background-color: #929292;
+}
+
+#shadow-light-btn:active {
+  background-color: white;
+  -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.493);
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.493);
+}
+
+#neon-line-btn {
+  background: transparent;
+  border: solid #ff8800 1px;
+  border-radius: 10px;
+  color: #ff8800;
+  padding: .6em;
+}
+
+#neon-line-btn:hover {
+  -webkit-box-shadow: 0px 0px 3px 2px #ff8800;
+          box-shadow: 0px 0px 3px 2px #ff8800;
+  -webkit-transition: ease .1s;
+  transition: ease .1s;
+}
+
+#neon-line-btn:active {
+  color: #ffbf48;
+  -webkit-box-shadow: 0px 0px 3px 2px #f8bc77;
+          box-shadow: 0px 0px 3px 2px #f8bc77;
+}
+
+#border-anim-btn {
+  background: transparent;
+  color: white;
+  display: inline-block;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(white));
+  background-image: linear-gradient(white, white);
+  background-size: 0% 1px;
+  background-repeat: no-repeat;
+  -webkit-transition: background-size 0.2s;
+  transition: background-size 0.2s;
+  margin: 5px 0;
+  background-position: 50% calc(100% - 0px);
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+#border-anim-btn:hover {
+  background-size: 100% 1px;
+  color: #94f842;
+  -webkit-transition: ease 0.2s;
+  transition: ease 0.2s;
+  border: solid transparent 1px;
+}
+
+#border-anim-btn:active {
+  color: white;
+}
+
+#circular-btn {
+  background: radial-gradient(circle, #222629 0%, black 100%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 2.2em;
+  color: red;
+  -webkit-transition: ease-in .12s;
+  transition: ease-in .12s;
+}
+
+#circular-btn:hover {
+  background: radial-gradient(circle, red 0%, black 100%);
+  -webkit-transition: ease-in .12s;
+  transition: ease-in .12s;
+  color: white;
+}
+
+#circular-btn:active {
+  background: white;
+  color: red;
+}
+
 /*
 ***********************************
 NAV
@@ -1126,5 +1341,15 @@ table thead th {
 
 .center-solo {
   text-align: center !important;
+}
+
+/*
+***********************************
+ANIM
+***********************************
+*/
+.anim {
+  width: 720px;
+  height: 400px;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -3,6 +3,9 @@
 @import "./product";
 @import "./firsthead";
 @import "./clock";
+@import "./text-perspective";
+@import "./block";
+@import "./buttons";
 
 /*
 ***********************************
@@ -97,3 +100,12 @@ table thead th {
     text-align: center !important;
 }
 
+/*
+***********************************
+ANIM
+***********************************
+*/
+.anim {
+    width: 720px;
+    height: 400px;
+}

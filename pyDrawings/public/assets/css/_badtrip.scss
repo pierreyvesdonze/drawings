@@ -59,4 +59,9 @@
 .badtrip-9 .badtrip-span {
   font-size: 9em;
   color: rgb(58, 58, 58);
+  transform: rotate(-8deg);
+-moz-transform: rotate(-8deg);
+-webkit-transform: rotate(-8deg);
+-khtml-transform: rotate(-8deg);
+-ms-transform: rotate(-8deg);
 }

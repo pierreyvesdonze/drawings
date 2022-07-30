@@ -1,0 +1,20 @@
+.bloc-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.block {
+    border: solid 1px white;
+    position: absolute
+}
+
+.block-1 {
+    width: 320px;
+    height: 320px;
+}
+
+.block-2 {
+    width: 300px;
+    height: 300px;
+}

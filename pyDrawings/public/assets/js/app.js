@@ -10,6 +10,7 @@ var app = {
         $('.head-color').click(app.changeBackProductColor);
         $('.adopter').click(app.adopter);
         $('.emotion').hover(app.emotion);
+        $('#typeText').keypress(app.typeText);
     },
 
     // CLIGNEMENT DES YEUX
@@ -108,6 +109,18 @@ var app = {
         $('.mouthCurve').toggleClass('mouth')
     },
 
+    typeText: function (e) {
+        let randomP = $('.random-size-p');
+        let r = (Math.random() + 1).toString(36).substring(7);
+        console.log(r);
+
+        var cssRandom = String($.now()).slice(-1);
+
+        $(r).css('font-size', function () {
+            return Math.ceil((cssRandom * 3) + 1 + "vw")
+        })
+        randomP.append(r);
+    },
 
     /** HORLOGE */
     // clock: function() {
